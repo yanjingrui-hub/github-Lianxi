@@ -2,10 +2,11 @@ import React from "react";
 // import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import Home from "./Home";
+import Home from "../views/ybk/Home";
 import My from "./My";
-import Massign from "./Massign";
-import Category from "./Category";
+import Massign from "../views/gy/Massign";
+import Category from "../views/yjr/Category";
+import ShopCart from "../views/yjr/ShopCart";
 
 const Tab = createBottomTabNavigator();
 
@@ -38,6 +39,16 @@ function App({ onLogout }) {
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="chatbubble" size={size} color={color} />
+          ),
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name="购物车"
+        component={ShopCart}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="cart" size={size} color={color} />
           ),
           headerShown: false,
         }}

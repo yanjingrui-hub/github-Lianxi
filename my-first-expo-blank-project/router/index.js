@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import Layout from "../src/views/Layout";
+import Layout from "../src/layout/Layout";
 import Login from "../src/views/Login";
 import yjr from "./children/yjr";
 import ybk from "./children/ybk";

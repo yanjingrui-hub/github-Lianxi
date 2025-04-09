@@ -1,19 +1,23 @@
 import React from "react";
 import { View, StyleSheet, Image, Dimensions } from "react-native";
 import { Form, Input, Button, Toast } from "@ant-design/react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const { width } = Dimensions.get("window");
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation, onLoginSuccess }) => {
   const [form] = Form.useForm();
 
   const handleLogin = () => {
     form
       .validateFields()
-      .then((values) => {
+      .then(async (values) => {
         console.log("登录信息:", values);
         Toast.success("登录成功");
         // TODO: 调用接口进行登录处理
+        await AsyncStorage.setItem("isLoggedIn", "true");
+        onLoginSuccess();
+        navigation.replace("Layout");
       })
       .catch((error) => {
         console.log("校验失败:", error);
@@ -25,7 +29,7 @@ const LoginScreen = () => {
     <View style={styles.container}>
       <View style={styles.card}>
         <Image
-          source={require("./assets/login.png")} // 商城 logo
+          source={require("../../assets/logo.png")} // 商城 logo
           style={styles.logo}
           resizeMode="contain"
         />
@@ -89,8 +93,8 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   logo: {
-    width: 80,
-    height: 80,
+    width: "100%",
+    height: 100,
     alignSelf: "center",
     marginBottom: 24,
   },

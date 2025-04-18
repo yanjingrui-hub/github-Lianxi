@@ -15,7 +15,12 @@ const LoginScreen = ({ navigation, onLoginSuccess }) => {
         console.log("登录信息:", values);
         Toast.success("登录成功");
         // TODO: 调用接口进行登录处理
-        await AsyncStorage.setItem("isLoggedIn", "true");
+        // 登录成功后，将登录的信息存储到localstorage中
+        await AsyncStorage.setItem(
+          "isLoggedIn",
+          "true",
+          localStorage.setItem("user", JSON.stringify(values))
+        );
         onLoginSuccess();
         navigation.replace("Layout");
       })

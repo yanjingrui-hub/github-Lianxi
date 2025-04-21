@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
-const Stack = createStackNavigator();
 import Message from "../../src/views/gy/Massign";
-import Service from '../../src/views/gy/service'
+import Service from "../../src/views/gy/service";
+const Stack = createStackNavigator();
 
 // 模版
 // import Detail1 from "../views/Detail1";

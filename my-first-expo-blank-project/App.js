@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Router from "./router/index";
-import "./src/views/gy/Mock"
+import "./src/views/gy/Mock";
+import "./mock/mock";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(null);

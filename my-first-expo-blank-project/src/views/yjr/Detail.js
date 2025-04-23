@@ -1,5 +1,11 @@
 import React from "react";
+import { View } from "@ant-design/react-native";
+import { useRoute } from "@react-navigation/native";
 
-export default function detail() {
-  return <div>这是一个很厉害的页面</div>;
-}
+const Detail = () => {
+  const route = useRoute();
+  const { id } = route.params;
+  return <View>{id}</View>;
+};
+
+export default Detail;

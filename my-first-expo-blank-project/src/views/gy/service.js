@@ -1,3 +1,9 @@
+import React from "react";
+
+export default function service() {
+  return <div></div>;
+}
+
 // import React, { useState, useEffect, useRef } from "react";
 // import {
 //   View,

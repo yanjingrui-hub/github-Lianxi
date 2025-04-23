@@ -25,7 +25,7 @@ function App({ onLogout }) {
       />
       <Tab.Screen
         name="分类"
-        component={Massign}
+        component={Category}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="grid" size={size} color={color} />
@@ -35,7 +35,7 @@ function App({ onLogout }) {
       />
       <Tab.Screen
         name="信息"
-        component={Category}
+        component={Massign}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="chatbubble" size={size} color={color} />
